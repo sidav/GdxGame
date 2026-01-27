@@ -10,6 +10,7 @@ import com.sidav.gdxgame.game.state.GameState
 import com.sidav.gdxgame.ui.UiStack
 import com.sidav.gdxgame.ui.overlays.ThisTurnDataOverlay
 import com.sidav.gdxgame.ui.overlays.HandOverlay
+import com.sidav.gdxgame.ui.overlays.GameMapOverlay
 
 class GameController {
     val gameState = GameState()
@@ -24,6 +25,7 @@ class GameController {
     }
 
     init {
+        uiStack.push(GameMapOverlay())
         uiStack.push(
             HandOverlay(
                 gameState.playerHand.contents,

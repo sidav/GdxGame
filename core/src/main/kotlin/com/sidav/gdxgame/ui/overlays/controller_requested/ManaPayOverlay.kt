@@ -1,4 +1,4 @@
-package com.sidav.gdxgame.ui.overlays
+package com.sidav.gdxgame.ui.overlays.controller_requested
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
@@ -6,6 +6,8 @@ import com.sidav.gdxgame.events.UiEvent
 import com.sidav.gdxgame.game.mana.ManaDie
 import com.sidav.gdxgame.ui.elements.TapArea
 import com.sidav.gdxgame.ui.elements.WindowWithTitle
+import com.sidav.gdxgame.ui.overlays.OverlayBase
+import com.sidav.gdxgame.ui.overlays.getColorForMana
 
 class ManaPayOverlay(val manaDice: List<ManaDie>) : OverlayBase() {
     override val modal = true
