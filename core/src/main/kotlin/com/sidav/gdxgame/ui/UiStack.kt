@@ -11,7 +11,7 @@ import com.sidav.gdxgame.game.state.GameState
 import com.sidav.gdxgame.ui.overlays.OverlayBase
 import com.sidav.gdxgame.ui.overlays.CardActionSelectOverlay
 import com.sidav.gdxgame.ui.overlays.HandOverlay
-import com.sidav.gdxgame.ui.overlays.ManaPayOverlay
+import com.sidav.gdxgame.ui.overlays.controller_requested.ManaPayOverlay
 
 class UiStack(val gameState: GameState) {
     private val overlays = mutableListOf<OverlayBase>()
