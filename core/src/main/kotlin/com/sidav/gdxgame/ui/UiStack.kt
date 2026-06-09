@@ -139,4 +139,8 @@ class UiStack(val gameState: GameState) {
     fun showCombatOverlay() {
         if (top !is CombatOverlay) push(CombatOverlay(gameState))
     }
+
+    fun removeCombatOverlay() {
+        overlays.removeAll { it is CombatOverlay }
+    }
 }

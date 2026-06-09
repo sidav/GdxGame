@@ -60,6 +60,10 @@ class GameController {
                     }
                 }
             }
+            is GameEvent.PlayerAppliesCombatTokenToEnemy ->
+                combatResolver.applyToken(ev.tokenIndex, ev.enemyIndex)
+            is GameEvent.PlayerAdvancesCombatPhase ->
+                combatResolver.advancePhase()
         }
     }
 

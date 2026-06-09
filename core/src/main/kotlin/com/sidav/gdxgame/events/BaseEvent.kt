@@ -22,6 +22,8 @@ interface GameEvent : BaseEvent {
     class PlayerSelectsManaColor(val color: ManaColor) : GameEvent
 
     class PlayerTriesToMove(val newCoords: AxialCoords) : GameEvent
+    class PlayerAppliesCombatTokenToEnemy(val tokenIndex: Int, val enemyIndex: Int) : GameEvent
+    object PlayerAdvancesCombatPhase : GameEvent
 }
 
 interface UiEvent : BaseEvent {}
