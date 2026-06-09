@@ -8,13 +8,17 @@ import com.sidav.gdxgame.game.mana.ManaCost
 import com.sidav.gdxgame.game.state.stats.Stat
 import com.sidav.gdxgame.game.state.stats.StatChange
 
-class Stamina: DeedCard(
-    object: CardEffect("Move 2") {
+class Stamina : DeedCard(
+    object : CardEffect("Move 2", applicability = listOf(Applicability.OUTSIDE_COMBAT)) {
         override fun requestOnApplying(): CardEffectRequest {
             return CardEffectRequest.ApplyStatChange(StatChange(Stat.MOVEMENT, 2))
         }
     },
-    object: CardEffect("Move 4", cost = ManaCost.SingleManaOfColor(ManaColor.BLUE)) {
+    object : CardEffect(
+        "Move 4",
+        cost = ManaCost.SingleManaOfColor(ManaColor.BLUE),
+        applicability = listOf(Applicability.OUTSIDE_COMBAT)
+    ) {
         override fun requestOnApplying(): CardEffectRequest {
             return CardEffectRequest.ApplyStatChange(StatChange(Stat.MOVEMENT, 4))
         }

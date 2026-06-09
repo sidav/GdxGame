@@ -39,6 +39,10 @@ class GameController {
     private fun handleEventForAwaitingInputMode(ev: GameEvent) {
         when (ev) {
             is GameEvent.EffectTriesToBePlayed -> {
+
+                val isApplicable = CardEffectApplicabilityResolver(gameState).canCardEffectBePlayedNow(ev.effect)
+                if (!isApplicable) return
+
                 debugMsg("Switching mode to PLAYING_EFFECT... Playing ${ev.effect.effectText}")
                 controllerMode = Mode.PlayingEffect
                 val resolverResult = cardEffectResolver.start(ev.effectSourceCard, ev.effect)

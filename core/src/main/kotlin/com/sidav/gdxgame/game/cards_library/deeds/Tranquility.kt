@@ -7,7 +7,7 @@ import com.sidav.gdxgame.game.mana.ManaColor
 import com.sidav.gdxgame.game.mana.ManaCost
 
 class Tranquility : DeedCard(
-    object : CardEffect("Heal 1") {
+    object : CardEffect("Heal 1", applicability = listOf(Applicability.OUTSIDE_COMBAT)) {
         override fun requestOnApplying(): CardEffectRequest {
             return CardEffectRequest.HealWounds(1)
         }
@@ -19,7 +19,11 @@ class Tranquility : DeedCard(
         }
     },
 
-    object : CardEffect("Heal 2", ManaCost.SingleManaOfColor(ManaColor.GREEN)) {
+    object : CardEffect(
+        "Heal 2",
+        ManaCost.SingleManaOfColor(ManaColor.GREEN),
+        applicability = listOf(Applicability.OUTSIDE_COMBAT)
+    ) {
         override fun requestOnApplying(): CardEffectRequest {
             return CardEffectRequest.HealWounds(2)
         }

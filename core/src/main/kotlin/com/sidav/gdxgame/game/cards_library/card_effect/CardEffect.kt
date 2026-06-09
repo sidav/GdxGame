@@ -6,8 +6,14 @@ import com.sidav.gdxgame.game.mana.ManaCost
 import com.sidav.gdxgame.game.mana.mana_units.ManaUnit
 
 open class CardEffect(
-    val effectText: String, val cost: ManaCost = ManaCost.Free
+    val effectText: String,
+    val cost: ManaCost = ManaCost.Free,
+    val applicability: List<Applicability> = listOf(Applicability.ALWAYS)
 ) {
+    enum class Applicability {
+        ALWAYS, OUTSIDE_COMBAT, COMBAT_ANYTIME, COMBAT_RANGED_PHASE, COMBAT_DEFEND_PHASE, COMBAT_ATTACK_PHASE
+    }
+
     enum class States {
         INITIAL_STATE, WAITING_FOR_PAYMENT, PAYMENT_ACCEPTED, APPLYING, DONE
     }

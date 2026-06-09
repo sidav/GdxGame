@@ -9,10 +9,19 @@ import com.sidav.gdxgame.game.state.stats.Stat
 import com.sidav.gdxgame.game.state.stats.StatChange
 
 class Swiftness : DeedCard(
-    object: CardEffect("Move 2") {
+    object : CardEffect(
+        "Move 2",
+        applicability = listOf(Applicability.OUTSIDE_COMBAT)
+    ) {
         override fun requestOnApplying(): CardEffectRequest {
             return CardEffectRequest.ApplyStatChange(StatChange(Stat.MOVEMENT, 2))
         }
     },
-    CardEffect("Ranged Attack 3.", ManaCost.SingleManaOfColor(ManaColor.WHITE))
+    CardEffect(
+        "Ranged Attack 3.",
+        ManaCost.SingleManaOfColor(ManaColor.WHITE),
+        applicability = listOf(
+            CardEffect.Applicability.COMBAT_RANGED_PHASE
+        )
+    )
 )

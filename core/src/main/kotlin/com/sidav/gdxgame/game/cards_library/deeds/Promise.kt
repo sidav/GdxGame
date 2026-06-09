@@ -8,13 +8,17 @@ import com.sidav.gdxgame.game.mana.ManaCost
 import com.sidav.gdxgame.game.state.stats.Stat
 import com.sidav.gdxgame.game.state.stats.StatChange
 
-class Promise: DeedCard(
-    object: CardEffect("Influence 2") {
+class Promise : DeedCard(
+    object : CardEffect("Influence 2", applicability = listOf(Applicability.OUTSIDE_COMBAT)) {
         override fun requestOnApplying(): CardEffectRequest {
             return CardEffectRequest.ApplyStatChange(StatChange(Stat.INFLUENCE, 2))
         }
     },
-    object: CardEffect("Influence 4", cost = ManaCost.SingleManaOfColor(ManaColor.WHITE)) {
+    object : CardEffect(
+        "Influence 4",
+        cost = ManaCost.SingleManaOfColor(ManaColor.WHITE),
+        applicability = listOf(Applicability.OUTSIDE_COMBAT)
+    ) {
         override fun requestOnApplying(): CardEffectRequest {
             return CardEffectRequest.ApplyStatChange(StatChange(Stat.INFLUENCE, 4))
         }
