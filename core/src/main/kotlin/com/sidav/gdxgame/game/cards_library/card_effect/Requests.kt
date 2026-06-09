@@ -6,6 +6,7 @@ import com.sidav.gdxgame.game.mana.ManaType
 import com.sidav.gdxgame.game.mana.mana_units.ManaCrystal
 import com.sidav.gdxgame.game.mana.mana_units.ManaToken
 import com.sidav.gdxgame.game.mana.mana_units.ManaUnit
+import com.sidav.gdxgame.game.state.combat.CombatToken
 import com.sidav.gdxgame.game.state.stats.StatChange
 
 /** This is sent BY cardEffect as something that should happen in order so that the effect can advance */
@@ -22,6 +23,7 @@ sealed interface CardEffectRequest {
     class ApplyStatChange(val statChange: StatChange) : CardEffectRequest
     class GivePlayerAManaCrystal(val color: ManaColor) : CardEffectRequest
     class GivePlayerAManaToken(val color: ManaColor) : CardEffectRequest
+    class GivePlayerCombatToken(val combatToken: CombatToken) : CardEffectRequest
     class DrawCards(val howMany: Int) : CardEffectRequest
     class HealWounds(val howMany: Int) : CardEffectRequest
 

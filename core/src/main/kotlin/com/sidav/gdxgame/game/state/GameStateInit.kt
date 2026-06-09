@@ -5,8 +5,8 @@ import com.sidav.gdxgame.game.cards_library.deeds.March
 import com.sidav.gdxgame.game.cards_library.deeds.Promise
 import com.sidav.gdxgame.game.cards_library.deeds.Stamina
 import com.sidav.gdxgame.game.cards_library.deeds.Tranquility
-import com.sidav.gdxgame.game.cards_library.deeds.todo.Rage
-import com.sidav.gdxgame.game.cards_library.deeds.todo.Swiftness
+import com.sidav.gdxgame.game.cards_library.deeds.Rage
+import com.sidav.gdxgame.game.cards_library.deeds.Swiftness
 import com.sidav.gdxgame.game.hexagonal_map.AxialCoords
 import com.sidav.gdxgame.game.hexagonal_map.flower_tile.tiles.CORE_TILES
 import com.sidav.gdxgame.game.hexagonal_map.flower_tile.tiles.COUNTRYSIDE_TILES

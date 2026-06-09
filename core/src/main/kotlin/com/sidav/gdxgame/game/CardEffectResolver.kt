@@ -84,6 +84,11 @@ class CardEffectResolver(
                     state.manaStock.addToken(req.color)
                     effect.onEvent(CardEffectEvent.Applied(req))
                 }
+                is CardEffectRequest.GivePlayerCombatToken -> {
+                    val cmb = state.currentCombat
+                    cmb?.playerTokens?.add(req.combatToken)
+                    effect.onEvent(CardEffectEvent.Applied(req))
+                }
                 is CardEffectRequest.DrawCards -> {
                     state.player.drawCards(req.howMany)
                     effect.onEvent(CardEffectEvent.Applied(req))
